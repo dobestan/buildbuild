@@ -150,7 +150,8 @@ STATICFILES_FINDERS = (
 
 # Django Pipeline settings for coffeescript
 PIPELINE_COMPILERS = (
-  'pipeline.compilers.coffee.CoffeeScriptCompiler',
+    'pipeline.compilers.coffee.CoffeeScriptCompiler',
+    'pipeline.compilers.sass.SASSCompiler',
 )
 
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
