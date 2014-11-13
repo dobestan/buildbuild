@@ -16,7 +16,7 @@ import os
 # exception message handling
 # when we are attempt to save a naive datetime, warning occurs
 # During development, such warnings into ignore status
-import warnings 
+import warnings
 warnings.filterwarnings(
         'ignore', r"DateTimeField .* received a naive datetime",
         RuntimeWarning, r'django\.db\.models\.fields')
@@ -148,7 +148,34 @@ STATICFILES_FINDERS = (
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
 
 BOWER_INSTALLED_APPS = (
-    'angular#1.2.23',
+    "jquery",
+    "angular",
+    "angular-resource",
+    "angular-cookies",
+    "angular-sanitize",
+    "angular-route",
+    "angular-animate",
+    "font-awesome",
+    "toastr",
+    "underscore",
+    "ion-range-slider",
+    "seiyria-bootstrap-slider",
+    "bootstrap",
+    "angular-bootstrap",
+    "bootstrap-file-input",
+    "holderjs",
+    "jquery.easy-pie-chart",
+    "morris.js",
+    "jquery.nicescroll",
+    "jquery.ui",
+    "jquery.slimscroll",
+    "jquery.easing",
+    "moment",
+    "gauge.js",
+    "flot",
+    "jquery-spinner",
+    "jquery-steps",
+    "angular-wizard"
 )
 
 
