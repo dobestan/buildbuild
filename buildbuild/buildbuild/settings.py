@@ -152,7 +152,25 @@ STATICFILES_FINDERS = (
 PIPELINE_COMPILERS = (
     'pipeline.compilers.coffee.CoffeeScriptCompiler',
     'pipeline.compilers.sass.SASSCompiler',
+    'pipeline_compass.compiler.CompassCompiler',
 )
+
+PIPELINE_CSS = {
+    'buildbuild': {
+        'source_filenames': (
+            'css/main.scss',
+        ),
+        'output_filename': 'buildbuild.css',
+    },
+}
+PIPELINE_JS = {
+    'buildbuild': {
+        'source_filenames': (
+            'js/app.coffee',
+        ),
+        'output_filename': 'buildbuild.js',
+    }
+}
 
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
 
