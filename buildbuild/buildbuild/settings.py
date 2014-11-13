@@ -148,6 +148,11 @@ STATICFILES_FINDERS = (
     'djangobower.finders.BowerFinder',
 )
 
+# Django Pipeline settings for coffeescript
+PIPELINE_COMPILERS = (
+  'pipeline.compilers.coffee.CoffeeScriptCompiler',
+)
+
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
 
 BOWER_INSTALLED_APPS = (
