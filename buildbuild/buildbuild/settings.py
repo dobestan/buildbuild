@@ -68,6 +68,7 @@ INSTALLED_APPS = (
     'djangobower',
     'rest_framework',
     'pipeline',
+    'djcompass',
 
     # Kombu transport using the Django database as a message store.
     'kombu.transport.django',
