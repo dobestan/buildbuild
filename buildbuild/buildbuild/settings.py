@@ -67,6 +67,7 @@ INSTALLED_APPS = (
     'djcelery',
     'djangobower',
     'rest_framework',
+    'pipeline',
 
     # Kombu transport using the Django database as a message store.
     'kombu.transport.django',
@@ -138,6 +139,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
