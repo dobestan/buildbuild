@@ -1,7 +1,5 @@
+<!DOCTYPE html>
 <html>
-  <!--[if lt 9]>         <html class="no-js lt-ie9"> <![endif]-->
-  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,87 +14,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
 
-    {% load compressed %}
-    {% compressed_css 'buildbuild' %}
-    {% compressed_js 'buildbuild' %}
-
     {% load staticfiles %}
 
     <link rel="stylesheet" href="{% static 'morris.js/morris.css' %}" />
     <link rel="stylesheet" href="{% static 'angular-wizard/dist/angular-wizard.css' %}" />
 
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/ui.css' %}" />
+
   </head>
 
-  <body data-ng-app="app" id="app" data-custom-background data-off-canvas-nav>
+  <body data-ng-app="app">
 
     <!--[if lt IE 9]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div data-ng-controller="AppCtrl">
-         <div data-ng-hide="isSpecificPage()"
-              data-ng-cloak>
-             <section data-ng-include=" 'views/header.html' "
-                  id="header" class="top-header">
+    <div>
+         <div>
+             <section id="header" class="top-header">
                   {% include 'header.html' %}
               </section>
 
-             <aside data-ng-include=" 'views/nav.html' "
-                  id="nav-container">
+             <aside id="nav-container">
                   {% include 'nav.html' %}
               </aside>
          </div>
 
          <div class="view-container">
-             <section data-ng-view id="content" class="animate-fade-up"></section>
+             <section id="content" class="animate-fade-up"></section>
          </div>
     </div>
 
-    <p><a href="/">Main</a></p>
-
-    {% verbatim angular %}
-    <!-- {{ "angularjs" + " works!" }} -->
-    {% endverbatim angular %}
-  <header>
-    <h1>BuildBuild</h1>
-  </header>
-  {% include 'dashboard.html' %}
-
-  <div class="container">
-    <div class="messages">
-    {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-    </div>
-
-  <nav>
-    {% if user.is_authenticated %}
-    <div>Welcome, {{ user.email }}</div>
-      <a href="{% url 'users:logout' %}">Logout</a>
-      <a href="{% url 'users:account' %}">Account info</a>
-      <a href="{% url 'teams:maketeam' %}">Make a Team</a>
-      <p>
-      {% block search_team %}
-      {% endblock %}
-      </p>
-      <p>
-      {% block team_list %}
-      {% endblock %}
-      </p>
-    {% else %}
-      <a href="{% url 'users:login' %}">Login</a>
-      <a href="{% url 'users:signup' %}">SignUp</a>
-    {% endif %}
-  </nav>
-
-    {% block content %}
-    {% endblock %}
-  </div>
-
-  {% include 'footer.html' %}
   </body>
 </html>

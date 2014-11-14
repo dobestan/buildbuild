@@ -151,11 +151,15 @@ STATICFILES_FINDERS = (
 
 # Django Pipeline settings for coffeescript
 PIPELINE_COMPILERS = (
+    'pipeline_compass.compiler.CompassCompiler',
     'pipeline.compilers.coffee.CoffeeScriptCompiler',
     'pipeline.compilers.sass.SASSCompiler',
-    'pipeline_compass.compiler.CompassCompiler',
 )
 
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+
+"""
 PIPELINE_CSS = {
     'buildbuild': {
         'source_filenames': (
@@ -172,6 +176,7 @@ PIPELINE_JS = {
         'output_filename': 'buildbuild.js',
     }
 }
+"""
 
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
 
